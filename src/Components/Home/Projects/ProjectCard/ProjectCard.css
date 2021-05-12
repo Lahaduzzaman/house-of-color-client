@@ -1,0 +1,37 @@
+.contain {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #111010;
+}
+
+.contain:hover .overlay {
+  opacity: 0.6;
+  height: 100%;
+}
+
+.text {
+  color: rgb(248, 246, 246);
+  position: absolute;
+  top: 85%;
+  left: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
+}

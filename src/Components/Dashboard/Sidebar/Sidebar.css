@@ -1,0 +1,11 @@
+.sidebar li {
+  margin-bottom: 2em;
+}
+.sidebar a:hover {
+  display: inline-block;
+  text-decoration: none;
+  transform: translate(8px);
+}
+.sidebar svg {
+  margin-right: 5px;
+}
