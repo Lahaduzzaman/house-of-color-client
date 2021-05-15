@@ -25,7 +25,7 @@ const Book = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:4000/singleService/${id}`)
+        fetch(`https://glacial-mountain-57695.herokuapp.com/singleService/${id}`)
             .then(res => res.json())
             .then(data => {
                 const newOrderInfo = { ...orderInfo }
@@ -40,7 +40,7 @@ const Book = () => {
 
     const markAsPaid = (paymentInfo) => {
         if (paymentInfo !== null) {
-            fetch('http://localhost:4000/addOrder', {
+            fetch('https://glacial-mountain-57695.herokuapp.com/addOrder', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

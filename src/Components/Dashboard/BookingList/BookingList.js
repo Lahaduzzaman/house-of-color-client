@@ -8,7 +8,7 @@ const BookingList = () => {
     const [bookings, setBookings] = useState([]);
     const [{ email }] = useContext(UserContext);
     useEffect(() => {
-        fetch(`http://localhost:4000/userOrder/${email}`)
+        fetch(`https://glacial-mountain-57695.herokuapp.com/userOrder/${email}`)
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [email])

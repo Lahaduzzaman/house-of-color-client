@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const [adminMail, setAdminMail] = useState('')
     const handleSubmit = () => {
         const eventValue = { email: adminMail }
-        fetch('http://localhost:4000/addAdmin', {
+        fetch('https://glacial-mountain-57695.herokuapp.com/addAdmin', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

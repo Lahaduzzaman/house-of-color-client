@@ -8,7 +8,7 @@ const OrderList = () => {
     const [refresh, setRefresh] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:4000/orders')
+        fetch('https://glacial-mountain-57695.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [refresh])
@@ -30,7 +30,7 @@ const OrderList = () => {
             color: color
         }
 
-        fetch(`http://localhost:4000/updateStatus/${id}`, {
+        fetch(`https://glacial-mountain-57695.herokuapp.com/updateStatus/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(eventValue)

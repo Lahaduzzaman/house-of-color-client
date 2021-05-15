@@ -7,7 +7,7 @@ import { Card } from 'react-bootstrap';
 const ManageServiceCard = ({ serviceInfo }) => {
     const { serviceName, serviceImg, _id } = serviceInfo;
     const handleDelete = id => {
-        fetch(`http://localhost:4000/deleteService/${id}`, {
+        fetch(`https://glacial-mountain-57695.herokuapp.com/deleteService/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

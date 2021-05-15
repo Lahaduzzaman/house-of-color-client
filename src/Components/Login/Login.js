@@ -12,7 +12,7 @@ const Login = () => {
     const [isSignedIn, setIsSignedIn] = useState(false);
     const { email } = loggedInUser;
     useEffect(() => {
-        fetch('http://localhost:4000/isAdmin', {
+        fetch('https://glacial-mountain-57695.herokuapp.com/isAdmin', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
