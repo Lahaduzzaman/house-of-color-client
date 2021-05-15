@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import StarRatings from 'react-star-ratings';
 
+
 const TestimonialCard = ({ testimonialInfo }) => {
     const { name, post, review, photo, rating } = testimonialInfo
     return (

@@ -5,12 +5,10 @@ import BookingCard from './BookingCard';
 
 
 const BookingList = () => {
-
     const [bookings, setBookings] = useState([]);
     const [{ email }] = useContext(UserContext);
-
     useEffect(() => {
-        fetch(`https://morning-escarpment-96840.herokuapp.com/userOrder/${email}`)
+        fetch(`http://localhost:4000/userOrder/${email}`)
             .then(res => res.json())
             .then(data => setBookings(data))
     }, [email])

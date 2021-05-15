@@ -8,26 +8,24 @@ import Sidebar from '../Sidebar/Sidebar';
 
 
 const Book = () => {
-    const stripePromise = loadStripe('pk_test_51IgmxKGYUTY8stRJWvUVGBwXaBeXAgfhaRMwBvdY98QSZyhULM4NsTUmNexGUexE6oN49XgK4jzihrf6lyWsWcIg00JDql9uVz');
-
+    const stripePromise = loadStripe('pk_test_51IenADB6yRiixHJxFTRJMdUWU4PaasyIM7madmwLKD5ksFfDxt9CbpLSZzPbel0qO2fxY23HjRBE8x9JfrBayE2N00t3CU7T6V');
     const [{ name, email }] = useContext(UserContext);
     const { id } = useParams()
 
-    //order information
     const [orderInfo, setOrderInfo] = useState({
         fullname: name,
         email: email,
         service: '',
         price: '',
-        status: 'pending',
+        status: 'Pending',
         color: 'danger',
         description: '',
         image: ''
     })
 
-    //finding order info
+
     useEffect(() => {
-        fetch(`https://morning-escarpment-96840.herokuapp.com/singleService/${id}`)
+        fetch(`http://localhost:4000/singleService/${id}`)
             .then(res => res.json())
             .then(data => {
                 const newOrderInfo = { ...orderInfo }
@@ -39,10 +37,10 @@ const Book = () => {
             })
     }, [id])
 
-    //checking if payment clear and placing order
+
     const markAsPaid = (paymentInfo) => {
         if (paymentInfo !== null) {
-            fetch('https://morning-escarpment-96840.herokuapp.com/addOrder', {
+            fetch('http://localhost:4000/addOrder', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -61,7 +59,6 @@ const Book = () => {
         newOrderInfo[event.target.name] = event.target.value;
         setOrderInfo(newOrderInfo);
     }
-
 
     return (
         <section>
@@ -95,7 +92,6 @@ const Book = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

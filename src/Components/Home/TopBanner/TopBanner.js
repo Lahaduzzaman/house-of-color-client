@@ -2,7 +2,8 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import topBannerImg from '../../../images/topBanner.jpg';
+import topBanner from '../../../images/topBanner.jpg';
+
 
 const TopBanner = () => {
     return (
@@ -11,15 +12,14 @@ const TopBanner = () => {
                 <div className="row align-items-center justify-content-center">
                     <div className="col-md-6">
                         <div className="container">
-                            <h1 style={{ fontSize: '55px' }} >Professional <br /> Painting Services</h1>
-                            <p className="mt-5" > <span> <FontAwesomeIcon color="red" icon={faCheck} /> Special Offer</span> <span className="ml-md-4 d-md-inline d-block" > <FontAwesomeIcon color="red" icon={faCheck} /> Professional Worker</span> </p>
-                            <p className="mt-4" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, praesentium.</p>
-                            <Link to="/services" className="btn btn-danger mt-4">Get Started</Link>
+                            <h1 style={{ fontSize: '45px' }} >Welcome To<br /> <b>House Of Color</b></h1>
+                            <p className="mt-4" >House Of Color's team of painters will provide top-quality interior and exterior residential and commercial painting services to the local area. The facilities will include a reception area where clients can come in and buy paint and various paint tools such as brushes, rollers, etc. There will be storage area for inventory, an employee coffee room, and an office for the owner.The owner of House Of Color believes that most companies can be profitable and successful if they focus on maintaining customer satisfaction.</p>
+                            <Link to="/services" className="btn btn-warning mt-4">Hire Us</Link>
                         </div>
                     </div>
                     <div className="col-md-6 mt-md-0 mt-5">
                         <div className="text-center" >
-                            <img className="w-100" style={{ height: '500px' }} src={topBannerImg} alt="" />
+                            <img className="w-100" style={{ height: '500px' }} src={topBanner} alt="" />
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import './ProjectCard.css';
 
+
 const ProjectCard = ({ projectInfo }) => {
     const { projectImg, projectName, projectLocation } = projectInfo;
     return (

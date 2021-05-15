@@ -2,21 +2,12 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import Sidebar from '../Sidebar/Sidebar';
 
+
 const AddService = () => {
-
-    //react hook form
     const { register, handleSubmit, formState: { errors } } = useForm();
-
-    //image url state
     const [imageUrl, setImageUrl] = useState('');
-
-    //if image uploaded and ready to upload service
     const [btnEnable, setBtnEnable] = useState(false);
-
-    //upload service
     const onSubmit = (data, e) => {
-
-        //service info object
         const eventValue = {
             serviceName: data.title,
             servicePrice: data.price,
@@ -24,7 +15,7 @@ const AddService = () => {
             serviceDesc: data.description
         }
 
-        fetch('https://morning-escarpment-96840.herokuapp.com/addService', {
+        fetch('http://localhost:4000/addService', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -37,11 +28,10 @@ const AddService = () => {
         e.target.reset()
     };
 
-    //upload image ot third party and find link
     const handleImage = (e) => {
         const files = e.target.files[0];
         const imageData = new FormData();
-        imageData.set('key', 'd31833276d6f7b577c800fa621a054fd');
+        imageData.set('key', '0183294d077e783abe41ce516155a08b');
         imageData.append('image', files);
 
         fetch('https://api.imgbb.com/1/upload', {
@@ -88,7 +78,7 @@ const AddService = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-12 text-center">
-                                        <input className={btnEnable ? "btn btn-danger" : "btn btn-danger waiting disabled"} type="submit" value="Add Service" />
+                                        <input className={btnEnable ? "btn btn-primary" : "btn btn-primary waiting disabled"} type="submit" value="Add Service" />
                                     </div>
                                 </div>
                             </form>

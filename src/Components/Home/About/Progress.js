@@ -1,10 +1,9 @@
 import React from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 
+
 const Progress = ({ perchantage }) => {
-
     const { perchant, name, pathColor } = perchantage;
-
     return (
         <div className="col-md-6 p-3">
             <div className="row">
@@ -17,7 +16,7 @@ const Progress = ({ perchantage }) => {
                 </div>
                 <div className="col-8">
                     <h5>{name}</h5>
-                    <p className="text-secondary" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus.</p>
+                    <p className="text-secondary" >House Of Color will be known for providing a high-quality service product. We will become known as a premium provider of custom and commercial painting and finishing services, operating at multiple levels within our prospect and existing client community.</p>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@
 .sidebar a:hover {
   display: inline-block;
   text-decoration: none;
-  transform: translate(8px);
+  transform: translate(10px);
 }
 .sidebar svg {
   margin-right: 5px;

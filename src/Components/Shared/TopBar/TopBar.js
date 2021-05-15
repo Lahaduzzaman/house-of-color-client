@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import logo from '../../../images/Refresh.png';
+import logo from '../../../images/logo.png';
+
 
 const TopBar = () => {
     const [{ isSignedIn, name, photoURL, isAdmin }] = useContext(UserContext);
@@ -17,10 +18,10 @@ const TopBar = () => {
                     height="30"
                     className="d-inline-block align-top"
                 />{' '}
-            REFRESH</Navbar.Brand>
+                <b>HOUSE OF COLOR</b></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto mr-5">
+                <Nav className="ml-auto mr-5 font-weight-bold">
                     <Nav.Link as={Link} className="mr-4" to="/">Home</Nav.Link>
                     <Nav.Link as={Link} className="mr-4" to="/about">About</Nav.Link>
                     <Nav.Link as={Link} className="mr-4" to="/services">Services</Nav.Link>
@@ -35,7 +36,7 @@ const TopBar = () => {
                         width="30"
                         height="30"
                         className="d-inline-block align-top rounded-circle"
-                    />{' '} {name}</Navbar.Brand> : <Button as={Link} to="/login" variant="outline-danger">Login</Button>
+                    />{' '} {name}</Navbar.Brand> : <Button as={Link} to="/login" variant="outline-success">Login</Button>
                 }
             </Navbar.Collapse>
         </Navbar>

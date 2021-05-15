@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import './Sidebar.css';
 
+
 const Sidebar = () => {
-
     const [{ isAdmin }] = useContext(UserContext)
-
     return (
-        <div className="sidebar bg-danger position-fixed d-flex flex-column justify-content-between col-md-2 py-5 px-4 h-100">
+        <div className="sidebar bg-warning position-fixed d-flex flex-column justify-content-between col-md-2 py-5 px-4 h-100">
 
             <ul className="list-unstyled">
                 <li>
@@ -26,7 +25,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/dashboard/bookingList" className="text-white">
-                            <FontAwesomeIcon icon={faList} /> <span>Booking list</span>
+                            <FontAwesomeIcon icon={faList} /> <span>Booking List</span>
                         </Link>
                     </li>
                     <li>

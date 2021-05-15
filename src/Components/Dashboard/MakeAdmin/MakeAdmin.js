@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
+
 const MakeAdmin = () => {
-
     const [adminMail, setAdminMail] = useState('')
-
     const handleSubmit = () => {
-
         const eventValue = { email: adminMail }
-
-        fetch('https://morning-escarpment-96840.herokuapp.com/addAdmin', {
+        fetch('http://localhost:4000/addAdmin', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -18,7 +15,7 @@ const MakeAdmin = () => {
         })
             .then(res => {
 
-                alert("Admin added successfully")
+                alert("Admin Added Successfully")
             })
 
     }
@@ -34,10 +31,10 @@ const MakeAdmin = () => {
                         <div className="col-md-6 mt-5">
                             <div className="row">
                                 <div className="col-md-8">
-                                    <input onBlur={(e) => { setAdminMail(e.target.value) }} className="form-control" placeholder="something@mail.com" type="email" />
+                                    <input onBlur={(e) => { setAdminMail(e.target.value) }} className="form-control" placeholder="admin@gmail.com" type="email" />
                                 </div>
                                 <div className="col-md-4">
-                                    <button onClick={() => { handleSubmit() }} className="btn btn-danger">Submit</button>
+                                    <button onClick={() => { handleSubmit() }} className="btn btn-success">Submit</button>
                                 </div>
                             </div>
                         </div>

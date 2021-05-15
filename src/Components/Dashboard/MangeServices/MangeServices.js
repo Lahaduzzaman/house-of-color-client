@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import ManageServiceCard from './ManageServiceCard';
 
+
 const MangeServices = () => {
-
     const [services, setServices] = useState([]);
-
     useEffect(() => {
-        fetch('https://morning-escarpment-96840.herokuapp.com/services')
+        fetch('http://localhost:4000/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data);

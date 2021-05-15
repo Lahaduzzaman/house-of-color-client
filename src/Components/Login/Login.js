@@ -6,15 +6,13 @@ import { UserContext } from "../../App";
 import firebaseConfig from './firebase.config';
 import './Login.css';
 
-const Login = () => {
 
+const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isSignedIn, setIsSignedIn] = useState(false);
-
     const { email } = loggedInUser;
-
     useEffect(() => {
-        fetch('https://morning-escarpment-96840.herokuapp.com/isAdmin', {
+        fetch('http://localhost:4000/isAdmin', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -49,22 +47,23 @@ const Login = () => {
             signedInUser.isSignedIn = true
             setLoggedInUser(signedInUser)
             history.replace(from);
-        }).catch(function (error) {
-            const errorMessage = error.message;
-            console.log(errorMessage);
-        });
+        })
+            .catch(function (error) {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
     }
 
     return (
         <div style={{ height: '500px' }} className="row justify-content-center mx-0 align-items-center" >
             <div className="col-md-4 align-items-center d-flex flex-column">
                 <h3 >Welcome,</h3>
-                <p className="text-secondary" > Sign in to continue </p>
+                <p className="text-secondary" > Sign In To Continue </p>
                 <div onClick={handleGoogleSignIn} className="google-btn mt-5">
                     <div className="google-icon-wrapper">
                         <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="" />
                     </div>
-                    <p className="btn-text"><b>Sign in with google</b></p>
+                    <p className="btn-text"><b>Sign In With Google</b></p>
                 </div>
             </div>
         </div>

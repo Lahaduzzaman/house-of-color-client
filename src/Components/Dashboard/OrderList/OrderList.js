@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import Sidebar from '../Sidebar/Sidebar';
 
-const OrderList = () => {
 
+const OrderList = () => {
     const [orders, setOrders] = useState([]);
     const [refresh, setRefresh] = useState(false)
 
     useEffect(() => {
-        fetch('https://morning-escarpment-96840.herokuapp.com/orders')
+        fetch('http://localhost:4000/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [refresh])
-
 
     const handleChange = (e) => {
         const id = e.target.name;
@@ -20,7 +19,7 @@ const OrderList = () => {
         if (e.target.value === "Done") {
             color = "success"
         }
-        if (e.target.value === "On going") {
+        if (e.target.value === "On Going") {
             color = "warning"
         }
         if (e.target.value === "Pending") {
@@ -31,7 +30,7 @@ const OrderList = () => {
             color: color
         }
 
-        fetch(`https://morning-escarpment-96840.herokuapp.com/updateStatus/${id}`, {
+        fetch(`http://localhost:4000/updateStatus/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(eventValue)
@@ -65,7 +64,7 @@ const OrderList = () => {
                                     orders.map(each => <tr style={{ height: '80px' }} ><td>{each.fullname}</td> <td> {each.email} </td><td>{each.service}</td><td>Credit Card</td><td>
                                         <select name={each._id} value={each.status} onChange={e => handleChange(e)} className={`form-control w-75 border-0 text-${each.color}`} >
                                             <option value="Pending">Pending</option>
-                                            <option value="On going">On going</option>
+                                            <option value="On Going">On Going</option>
                                             <option value="Done">Done</option>
                                         </select>
                                     </td> </tr>)

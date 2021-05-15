@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { UserContext } from '../../../App';
 import Sidebar from '../Sidebar/Sidebar';
 
+
 const Review = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [{ photoURL }] = useContext(UserContext);
@@ -15,7 +16,7 @@ const Review = () => {
             rating: data.rating
         }
 
-        fetch('https://morning-escarpment-96840.herokuapp.com/addReview', {
+        fetch('http://localhost:4000/addReview', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +43,7 @@ const Review = () => {
                                     <input className="form-control mb-4 border-0 bg-light" placeholder="Your Name" {...register("name")} />
                                 </div>
                                 <div className="col-md-12">
-                                    <input className="form-control mb-4 border-0 bg-light" placeholder="Company's name, Designation" {...register("designation")} />
+                                    <input className="form-control mb-4 border-0 bg-light" placeholder="Company's Name, Designation" {...register("designation")} />
                                 </div>
                                 <div className="col-md-12">
                                     <input type="number" min="0" max="5" className="form-control mb-4 border-0 bg-light" placeholder="Rating out of 5" {...register("rating")} />
@@ -55,7 +56,7 @@ const Review = () => {
                             </div>
                             <div className="row">
                                 <div className="col-md-12 text-center">
-                                    <input className="btn btn-danger" type="submit" />
+                                    <input className="btn btn-success" type="Submit" />
                                 </div>
                             </div>
                         </form>

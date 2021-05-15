@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
+
 const ProcessPayment = (props) => {
     const [paymentSuccess, setPaymentSuccess] = useState(null);
     const [paymentError, setPaymentError] = useState(null);
@@ -31,7 +32,7 @@ const ProcessPayment = (props) => {
     return (
         <form onSubmit={handleSubmit}>
             <CardElement />
-            <button className="btn btn-danger my-3 px-5" type="submit" disabled={!stripe}>
+            <button className="btn btn-success my-3 px-5" type="submit" disabled={!stripe}>
                 Pay
         </button>
             {paymentError && <p style={{ color: "red" }}>Failed, {paymentError.message}</p>}
